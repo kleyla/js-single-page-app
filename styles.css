@@ -102,6 +102,12 @@ main {
   font-weight: 300;
 }
 
+/* Error */
+.error404 {
+  text-align: center;
+  padding-top: 24px;
+}
+
 @media (max-width: 900px) {
   .character-card {
     height: auto;
