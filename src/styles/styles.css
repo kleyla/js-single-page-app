@@ -57,10 +57,14 @@ main {
   margin: 10px;
   width: 300px;
   border-radius: 4px;
-  box-shadow: 2px 2px #ccc;
+  box-shadow: 3px 6px 5px #888888;
   border: 1px #ccc solid;
 }
+.character-item:hover {
+  box-shadow: 3px 6px 5px 2px #888888;
+}
 .character-item img {
+  width: 100%;
   border-radius: 4px 4px 0 0;
   background-size: cover;
   background-attachment: fixed;
@@ -70,17 +74,13 @@ main {
   color: #000;
   margin: 24px 0;
 }
-.character-item:hover {
-  box-shadow: 4px 4px rgb(117, 116, 116);
-}
 
 /* Character */
-
 .character-card {
   display: flex;
   flex-direction: row;
   border-radius: 4px;
-  box-shadow: 2px 2px #ccc;
+  box-shadow: 3px 6px 5px #888888;
   max-width: 900px;
   margin: 24px auto;
   height: 300px;
@@ -88,7 +88,13 @@ main {
   border: 1px #ccc solid;
   z-index: 1;
 }
+.character-card article {
+  width: 100%;
+  height: 100%;
+}
 .character-card img {
+  width: 100%;
+  height: 100%;
   border-radius: 4px 0 0 4px;
   z-index: 0;
 }
