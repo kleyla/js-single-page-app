@@ -1,8 +1,22 @@
+:root {
+  --bg: #f4f4f4;
+  --bg-card: #a4fa2b;
+  --text-color: #000;
+  --bg-toogle: #000;
+}
+
+[data-theme="dark"] {
+  --bg: #303030;
+  --bg-card: #424242;
+  --text-color: #fff;
+  --bg-toogle: #fff;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #3c484e;
+  background-color: var(--bg);
+  color: var(--text-color);
 }
 
 * {
@@ -36,7 +50,7 @@ body {
   font-weight: 700;
 }
 .header-item a {
-  color: #000;
+  color: var(--text-color);
 }
 .text-upper {
   text-transform: uppercase;
@@ -45,6 +59,7 @@ body {
 main {
   width: 80%;
   margin: 0 auto;
+  padding: 48px 0;
 }
 .characters {
   width: 100%;
@@ -59,6 +74,7 @@ main {
   border-radius: 4px;
   box-shadow: 3px 6px 5px #888888;
   border: 1px #ccc solid;
+  background: var(--bg-card);
 }
 .character-item:hover {
   box-shadow: 3px 6px 5px 2px #888888;
@@ -71,7 +87,7 @@ main {
 }
 .character-item h2 {
   text-align: center;
-  color: #000;
+  color: var(--text-color);
   margin: 24px 0;
 }
 
@@ -82,7 +98,7 @@ main {
   border-radius: 4px;
   box-shadow: 3px 6px 5px #888888;
   max-width: 900px;
-  margin: 24px auto;
+  margin: 0 auto;
   height: 300px;
   align-items: center;
   border: 1px #ccc solid;
@@ -112,6 +128,56 @@ main {
 .error404 {
   text-align: center;
   padding-top: 24px;
+}
+/* Switch toggle */
+.switch-toggle {
+  display: flex;
+  /* width: 100%; */
+}
+.switch-toggle-text {
+  width: auto;
+  margin: 0 10px;
+}
+.theme-switch-toggle {
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width: 40px;
+}
+.theme-switch-toggle input {
+  display: none;
+}
+.theme-switch-toggle input:checked + .slider {
+  background-color: rgba(204, 204, 204, 0.39);
+}
+.theme-switch-toggle input:checked + .slider::before {
+  transform: translateX(26px);
+}
+.slider {
+  background: #ccc;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  top: 5px;
+  transition: 0.4s;
+}
+.slider::before {
+  background-color: var(--bg-toogle);
+  content: "";
+  left: -2px;
+  top: -5px;
+  position: absolute;
+  transition: 0.4s;
+  width: 25px;
+  height: 25px;
+}
+.round {
+  border-radius: 34px;
+}
+.round::before {
+  border-radius: 50%;
 }
 
 @media (max-width: 900px) {

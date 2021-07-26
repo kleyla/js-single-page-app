@@ -15,13 +15,30 @@ const router = async () => {
   const header = null || document.getElementById("header");
   const content = null || document.getElementById("content");
 
-  header.innerHTML = await Header();
-
   let hash = getHash();
   let route = await resolveRoutes(hash);
   let render = routes[route] ? routes[route] : Error404;
 
+  header.innerHTML = await Header();
   content.innerHTML = await render();
+
+  // Switch toggle
+  const switchToggle = null || document.querySelector("#switch-toggle");
+  const switchToggleText =
+    null || document.querySelector("#switch-toggle-text");
+
+  const swichTheme = (event) => {
+    if (event.target.checked) {
+      switchToggleText.innerText = "Light Mode";
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      switchToggleText.innerText = "Dark Mode";
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  };
+  console.log(document.documentElement);
+
+  switchToggle.addEventListener("change", swichTheme, false);
 };
 
 export default router;
